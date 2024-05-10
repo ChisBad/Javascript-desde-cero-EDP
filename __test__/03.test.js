@@ -62,8 +62,8 @@ describe('cantidadDeVocales',()=>{
 
 describe('primerDivisible',()=>{
     it('Deberia devolver el primer numero divisible de num', ()=>{
-        expect(primerDivisible(1, 7)).toBe(1)
-        expect(primerDivisible(5, 14)).toBe(7)
-        expect(primerDivisible(2 , 21)).toBe(3)
+        expect(primerDivisible(1, 7)).toBe(7)
+        expect(primerDivisible(5, 14)).toBe(15)
+        expect(primerDivisible(2 , 21)).toBe(22)
     })
 })

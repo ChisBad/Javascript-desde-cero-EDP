@@ -8,15 +8,15 @@ const {
     nuevoModulo
 } = require('../01.Introduccion/01-Introduccion.js')
 
-describe('cadena', () =>{
-    it('Deberia crear una variable tipo String', () =>{
-        expect(typeof cadena).toBe('string')
-    })
-})
-
 describe('num', () =>{
     it('Deberia crear una variable tipo String', () =>{
         expect(typeof num).toBe('number')
+    })
+})
+
+describe('cadena', () =>{
+    it('Deberia crear una variable tipo String', () =>{
+        expect(typeof cadena).toBe('string')
     })
 })
 

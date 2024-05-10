@@ -4,14 +4,29 @@
 //Debes crear un funcion que retorne un mensaje de bienvenida con nombre y apellido de la persona
 //Ejemplo "Bienvenido Leonardo Avila" -> IMPORTANTE la funcion tiene que llamarse 'bienvenida'
 //Tu código:
-
+function bienvenida(nombre, apellido) {
+    return "Bienvenido " + nombre + " " + apellido;
+  }
 
 
 /**********************************************************************************/
 // Crea una funcion el cual cumpla la funcion de una calculadora.. tiene que recibir 3 parametros num1, operador y num2
 // IMPORTANTE -> la funcion debe llamarse 'calc'
 // Tu código:
-
+function calc(num1, operador, num2) {
+    switch (operador) {
+      case "+":
+        return num1 + num2;
+      case "-":
+        return num1 - num2;
+      case "*":
+        return num1 * num2;
+      case "/":
+        return num1 / num2;
+      default:
+        return "Operador inválido";
+    }
+  }
 
 
 /**********************************************************************************/
@@ -24,7 +39,29 @@
 // ejemplo => max = 20 y porcentaje de lluvia = 70 => devolver "El día está lindo, recomendable un paraguas"
 // IMPORTANTE -> la funcion debe llamarse 'temp'    
 // Tu código:
-
+function temp(max, min, porcentajeLluvia) {
+    if (max < 15) {
+      if (porcentajeLluvia > 50) {
+        return "Es recomendable salir con abrigo, recomendable un paraguas";
+      } else {
+        return "Es recomendable salir con abrigo";
+      }
+    } else if (max < 26 && min > 17) {
+      if (porcentajeLluvia > 50) {
+        return "El día está lindo, recomendable un paraguas";
+      } else {
+        return "El día está lindo";
+      }
+    } else if (min > 25) {
+      if (porcentajeLluvia > 50) {
+        return "El día estará caluroso, recomendable un paraguas";
+      } else {
+        return "El día estará caluroso";
+      }
+    } else {
+      return "No se cumple ninguna condición establecida";
+    }
+  }
 
 
 /**********************************************************************************/
@@ -33,7 +70,13 @@
 // Si la contraseña contiene 8 caracteres, devolver "La contraseña es segura", en caso contrario devolver "La contraseña es insegura"
 // IMPORTANTE -> la funcion debe llamarse 'checkPassword'
 // Tu código:
-
+function checkPassword(password) {
+    if (password.length >= 8) {
+      return "La contraseña es segura";
+    } else {
+      return "La contraseña es insegura";
+    }
+  }
 
 
 
@@ -41,7 +84,9 @@
 // Crea una función que reciba un string como parámetro y devuelva el mismo string pero con todas las palabras en orden inverso.
 // IMPORTANTE -> la funcion debe llamarse 'stringInverso'
 // Tu código:
-
+function stringInverso(str) {
+    return str.split('').reverse().join('');
+  }
 
 
 /**********************************************************************************/
