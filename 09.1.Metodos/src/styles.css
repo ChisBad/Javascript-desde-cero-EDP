@@ -1,97 +1,81 @@
-body{
-    background-color: #331D2C;   
-    font-family: 'Roboto Mono', monospace; 
-}
-.tableAlumnos{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   background-color: #A78295;
-   width: auto;
-   height: auto;
-   margin: 10px;
-   padding: 10px;
-   flex-direction: column;
-}
-.peliculas{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   background-color: #A78295;
-   width: auto;
-   height: auto;
-   margin: 10px;
-   padding: 10px;
-   flex-direction: column;
+body {
+    background-color: #DFD0B8; /* Color de fondo */
+    font-family: 'Roboto Mono', monospace;
 }
 
-.table{
-    background-color: #3F2E3E;
-    color: #EFE1D1
+/* Contenedor de la tabla de alumnos */
+.tableAlumnos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #948979; /* Color de fondo */
+    width: auto;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
 }
-.peli{
-    background-color: #3F2E3E;
-    color: #EFE1D1
+
+/* Contenedor de las películas */
+.peliculas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #948979; /* Color de fondo */
+    width: auto;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    flex-direction: column;
 }
-.demo {
-    border:1px solid #C0C0C0;
-    border-collapse:collapse;
-    padding:5px;
+
+/* Estilos para las tablas */
+.table, .peli {
+    background-color: #344e5f; /* Color de fondo */
+    color: #333333; /* Color del texto */
+    padding: 40px;
+    margin-top: 40px;
 }
+
 .demo th {
-    border:1px solid #C0C0C0;
-    padding:5px;
-    background:#F0F0F0;
-}
-.demo td {
-    border:1px solid #C0C0C0;
-    padding:5px;
-}
-
-.table{
+    border: 1px solid #CCCCCC; /* Borde de las celdas */
     padding: 10px;
-    margin-top: 10px;
+    background: #F0F0F0; /* Color de fondo de las celdas del encabezado */
 }
 
-#buttons {
-    display: flex;
-    justify-content: center;
+.demo td {
+    border: 1px solid #CCCCCC; /* Borde de las celdas */
+    padding: 10px;
 }
 
-button{
-    width: 100px;
-    height: 70px;
+/* Estilos para los botones */
+button {
+    width: 150px; /* Ancho del botón */
+    height: 40px; /* Alto del botón */
     margin: 10px;
     padding: 5px;
-    background-color: #EFE1D1;
-    color: #3F2E3E;
-}
-
-button:hover{
-    background-color: #3F2E3E;
-    color:#EFE1D1;
+    background-color: #153448; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-#header-table th{
-    color:#3F2E3E
+button:hover {
+    background-color: #507286; /* Cambio de color al pasar el mouse */
 }
 
-#title{
+/* Estilos para los títulos */
+#title, #titlePeliculas {
     display: flex;
-    color: #EFE1D1;
+    color: #333333; /* Color del texto */
     justify-content: center;
+    margin-bottom: 20px;
 }
 
-.peli img{
-    width: 200px;
-    height: 320px;
+/* Estilos para las imágenes */
+.peli img {
+    width: 200px; /* Ancho de las imágenes */
+    height: 300px; /* Alto de las imágenes */
     margin: 10px;
-}
-
-header{
-    background-color: #A78295;
-    color: #331D2C;
-    display: flex;
-    justify-content: center;
 }

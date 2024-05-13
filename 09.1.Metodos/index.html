@@ -10,13 +10,20 @@
     <title>Metodos Ejercicios 02</title>
 </head>
 <body>
-    <header>
-            <h1>Escuela de programacion</h1>
+    <header style="text-align: center;">
+            <h1>ESCUELA DE PROGRAMACIÓN</h1>
     </header>
     <main>
         <section>
-            <h1 id="title">Alumnos Escuela de Programacion</h1>
+            <h1 id="title" style="text-align: center; color: #1b0a0a;">Alumnos Escuela de Programación</h1>
             <div class ="tableAlumnos">
+                <div id="buttonsAlumnos" class="buttons">
+                    <button onclick="btnDate()">Datos Alumnos</button>
+                    <button onclick="btnPromedios()">Promedios</button>
+                    <button onclick="btnAsistencia()">Asistencias</button>
+                    <button onclick="btnAprobados()">Aprobados</button>
+                    <button onclick="btnReprobados()">Reprobados</button>
+                </div>
                 <div class="table">
                     <table class="demo">
                         <caption>Alumnos</caption>
@@ -24,10 +31,10 @@
                         <tr id="header-table">
                             <th>Nombre</th>
                             <th>Apellido</th>
-                            <th id="thrid-column">...</th>
+                            <th id="third-column">...</th>
                         </tr>
                         </thead>
-                        <tbody id="bodyAlumnos">
+                        <tbody id="bodyAlumnos" style="color: white;">
                         <!-- <tr>
                             <td>Leonardo</td>
                             <td>Avila</td>
@@ -36,22 +43,12 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="buttons">
-                    <button onclick="btnDate()">Datos Alumnos</button>
-                    <button onclick="btnPromedios()">Promedios</button>
-                    <button onclick="btnAsistencia()">Asistencias</button>
-                    <button onclick="btnAprobados()">Aprobados</button>
-                    <button onclick="btnReprobados()">Reprobados</button>
-                </div>
             </div>
         </section>
         <section>
-            <h1 id="title">Peliculas</h1>
+            <h1 id="titlePeliculas" style="text-align: center; color: #1b0a0a;">Peliculas</h1>
             <div class ="peliculas">
-                <div class="peli">
-
-                </div>
-                <div id="buttons">
+                <div id="buttonsPeliculas" class="buttons">
                     <button onclick="allFilms()">Todos</button>
                     <button onclick="estrenos()">Estrenos</button>
                     <button onclick="accion()">Accíon</button>
@@ -59,6 +56,7 @@
                     <button onclick="crimen()">Crimen</button>
                     <button onclick="otros()">Otros</button>
                 </div>
+                <div class="peli"></div>
             </div>
         </section>
     </main>

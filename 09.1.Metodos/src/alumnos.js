@@ -26,13 +26,36 @@ let addColumn = false; // Variable que debe cambiar según -> Si existe la 4 col
 
 // BOTON DATOS ALUMNO => Deberia devolver la tabla de alumnos con los datos personales de cada alumno (nombre, apellido, dni).
 const btnDate = () =>{
+    deleteColumn(); // Eliminar columna adicional si existe
+    bodyTableAlumnos.innerHTML = ''; // Limpiar cuerpo de la tabla
+    headerTable.innerHTML = '<tr><th>Nombre</th><th>Apellido</th><th>DNI</th></tr>'; // Restaurar encabezado de la tabla
 
+    // Iterar sobre cada alumno y agregar una fila a la tabla con sus datos
+    alumnos.forEach(alumno => {
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${alumno.nombre}</td><td>${alumno.apellido}</td><td>${alumno.dni}</td>`;
+        bodyTableAlumnos.appendChild(newRow);
+    });
+
+    thirdColumn.innerText = 'DNI'; // Cambiar título de la tercera columna
 }
     
 
 // BOTON PROMEDIOS => Deberia devolver la tabla de alumnos con el promedio de cada alumno, este consta en 3 notas (examen1, examen2, examen3).
 const btnPromedios = () => {
+    deleteColumn(); // Eliminar columna adicional si existe
+    bodyTableAlumnos.innerHTML = ''; // Limpiar cuerpo de la tabla
+    headerTable.innerHTML = '<tr><th>Nombre</th><th>Apellido</th><th>Promedio</th></tr>'; // Restaurar encabezado de la tabla
 
+    // Iterar sobre cada alumno y calcular su promedio
+    alumnos.forEach(alumno => {
+        const promedio = (alumno.examen1 + alumno.examen2 + alumno.examen3) / 3;
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${alumno.nombre}</td><td>${alumno.apellido}</td><td>${promedio.toFixed(2)}</td>`;
+        bodyTableAlumnos.appendChild(newRow);
+    });
+
+    thirdColumn.innerText = 'Promedio'; // Cambiar título de la tercera columna
 }
 
 
@@ -40,20 +63,67 @@ const btnPromedios = () => {
 // Además deberás crear una columna* con el porcentaje de asistencias.
 // *la columna se deberá eliminar si se selecciona otro boton
 const btnAsistencia = () => {
+    deleteColumn(); // Eliminar columna adicional si existe
+    bodyTableAlumnos.innerHTML = ''; // Limpiar cuerpo de la tabla
+    headerTable.innerHTML = '<tr><th>Nombre</th><th>Apellido</th><th>Asistencias</th><th>Porcentaje</th></tr>'; // Restaurar encabezado de la tabla
 
+    // Iterar sobre cada alumno y calcular su porcentaje de asistencias
+    alumnos.forEach(alumno => {
+        const porcentaje = (alumno.asistencias / 24) * 100;
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `<td>${alumno.nombre}</td><td>${alumno.apellido}</td><td>${alumno.asistencias}/24</td><td>${porcentaje.toFixed(2)}%</td>`;
+        bodyTableAlumnos.appendChild(newRow);
+    });
+
+    thirdColumn.innerText = 'Asistencias'; // Cambiar título de la tercera columna
+    const newColumn = document.createElement('th'); // Crear nueva columna
+    newColumn.innerText = 'Eliminar';
+    newColumn.id = 'delete';
+    headerTable.appendChild(newColumn); // Agregar nueva columna al encabezado
+    addColumn = true; // Indicar que se ha agregado una columna adicional
 } 
 
 
 // BOTON APROBADOS => - Deberia devolver la tabla de alumnos en ella solo aquellos que tengan aprobado el cursado, en base a las siguientes condiciones:
 // Un promedio ≥ 70 y un porcentaje de asistencia ≥ 70
 const btnAprobados = () => {
+    deleteColumn(); // Eliminar columna adicional si existe
+    bodyTableAlumnos.innerHTML = ''; // Limpiar cuerpo de la tabla
+    headerTable.innerHTML = '<tr><th>Nombre</th><th>Apellido</th><th>Promedio</th><th>Asistencias</th></tr>'; // Restaurar encabezado de la tabla
 
+    // Iterar sobre cada alumno y mostrar solo aquellos aprobados
+    alumnos.forEach(alumno => {
+        const promedio = (alumno.examen1 + alumno.examen2 + alumno.examen3) / 3;
+        const porcentaje = (alumno.asistencias / 24) * 100;
+        if (promedio >= 70 && porcentaje >= 70) {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${alumno.nombre}</td><td>${alumno.apellido}</td><td>${promedio.toFixed(2)}</td><td>${alumno.asistencias}/24</td>`;
+            bodyTableAlumnos.appendChild(newRow);
+        }
+    });
+
+    thirdColumn.innerText = 'Promedio'; // Cambiar título de la tercera columna
 }
 
 
 // Deberia devolver la tabla de alumnos con aquellos que no aprobaron el cursado.
 const btnReprobados = () => {
+    deleteColumn(); // Eliminar columna adicional si existe
+    bodyTableAlumnos.innerHTML = ''; // Limpiar cuerpo de la tabla
+    headerTable.innerHTML = '<tr><th>Nombre</th><th>Apellido</th><th>Promedio</th><th>Asistencias</th></tr>'; // Restaurar encabezado de la tabla
 
+    // Iterar sobre cada alumno y mostrar solo aquellos reprobados
+    alumnos.forEach(alumno => {
+        const promedio = (alumno.examen1 + alumno.examen2 + alumno.examen3) / 3;
+        const porcentaje = (alumno.asistencias / 24) * 100;
+        if (promedio < 70 || porcentaje < 70) {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `<td>${alumno.nombre}</td><td>${alumno.apellido}</td><td>${promedio.toFixed(2)}</td><td>${alumno.asistencias}/24</td>`;
+            bodyTableAlumnos.appendChild(newRow);
+        }
+    });
+
+    thirdColumn.innerText = 'Promedio'; // Cambiar título de la tercera columna
 }
 
 
